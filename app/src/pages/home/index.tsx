@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react"
 import { fetchEventos } from "../../services/api/eventos"
+import { NavLink } from "react-router";
 
 type Evento = {
     id: number;
@@ -16,13 +17,13 @@ function Home() {
 
   const [eventos, setEventos] = useState<Evento[]>([])
 
-  useEffect(() => {
+    useEffect(() => {
       const loadEventos = async () => {
           const eventosData = await fetchEventos();
           setEventos(eventosData);
       };
       loadEventos();
-  }, []);
+    }, []);
 
   return (
     <>
@@ -41,7 +42,7 @@ function Home() {
                                 </div>
                             </div>
                             <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                <div className="text-center"><NavLink className="btn btn-outline-dark mt-auto" to="/detail">Ver Detalle</NavLink></div>
                             </div>
                         </div>
                     </div>
