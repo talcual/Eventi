@@ -3,15 +3,6 @@ import Footer from "../../components/footer";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
 
-type Evento = {
-    id: number;
-    nombre: string;
-    lugar: string;
-    ciudad: {
-        id: number;
-        nombre: string;
-    };
-}
 
 function Detail() {
 
